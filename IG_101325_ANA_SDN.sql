@@ -66,5 +66,4 @@ FROM #sdn_pit;
 SELECT DISTINCT(ana.playerID), ana.nameFirst, ana.nameLast
 FROM #ana AS ana
 INNER JOIN #sdn AS sd
-
 	ON ana.playerID = sd.playerID;
