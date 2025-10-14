@@ -5,7 +5,7 @@
 SELECT DISTINCT(tf.franchID), tf.franchName, t.teamID, t.name
 FROM dbo.TeamsFranchises AS tf
 INNER JOIN dbo.Teams AS t
-	ON tf.franchID = t.franchID
+	ON tf.franchID = t.franchID;
 
 
 -- Create temp table for all players with batting records for ANA franchise
@@ -66,4 +66,5 @@ FROM #sdn_pit;
 SELECT DISTINCT(ana.playerID), ana.nameFirst, ana.nameLast
 FROM #ana AS ana
 INNER JOIN #sdn AS sd
+
 	ON ana.playerID = sd.playerID;
