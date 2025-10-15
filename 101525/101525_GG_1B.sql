@@ -1,17 +1,3 @@
--- Create a temp table for every player who won a Gold Glove
-SELECT DISTINCT(playerID), awardID
---INTO #gg
-FROM dbo.AwardsPlayers
-WHERE awardID = 'Gold Glove';
-
-
--- Create temp table for every player who played 1B
-SELECT DISTINCT(playerID), POS
---INTO #all1b
-FROM dbo.Fielding
-WHERE POS = '1B';
-
-
 -- Create temp table for every player who won a Gold Glove and played 1B at least once
 SELECT DISTINCT(gg.playerID)
 INTO #gg_all1b
@@ -26,4 +12,5 @@ WHERE gg.awardID = 'Gold Glove' AND
 SELECT ggfirst.playerID, p.nameFirst, p.nameLast
 FROM #gg_all1b AS ggfirst
 INNER JOIN dbo.People AS p
+
 	ON ggfirst.playerID = p.playerID;
