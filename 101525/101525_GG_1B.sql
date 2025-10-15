@@ -12,5 +12,4 @@ WHERE gg.awardID = 'Gold Glove' AND
 SELECT ggfirst.playerID, p.nameFirst, p.nameLast
 FROM #gg_all1b AS ggfirst
 INNER JOIN dbo.People AS p
-
 	ON ggfirst.playerID = p.playerID;
